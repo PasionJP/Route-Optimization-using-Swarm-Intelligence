@@ -11,5 +11,5 @@ Both ACO and PSO are like magic wands for navigating complex problems. ACO uses 
 ![ExecutionTimes](https://github.com/PasionJP/Route-Optimization-using-Swarm-Intelligence/assets/46522023/8cd7f316-c074-46f8-ae20-e3b052df8a0b)
 Now, here's a cool discovery: PSO is like the speedster among these tricks. In experiments, it's been found that PSO often finishes the puzzle faster than ACO. This is because PSO is like a simpler game of tag compared to ACO's intricate ant adventure.
 
-![Experiment](https://github.com/PasionJP/Route-Optimization-using-Swarm-Intelligence/assets/46522023/c0102147-9e6d-4f0c-ae1c-f6ffbd5776d2)
+![Experiment](https://github.com/PasionJP/Route-Optimization-using-Swarm-Intelligence/assets/46522023/d45117b4-e451-4ac6-9ae7-83aaee66cd69)
 So, in a nutshell, the Traveling Salesman Problem is a real brain-teaser with everyday uses. ACO and PSO are like smart ways nature teaches us to solve it. While both tricks are super cool, PSO is the quick kid on the block – perfect for when time is running short.
