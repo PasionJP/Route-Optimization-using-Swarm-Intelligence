@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/**
+ * Computes a CSS calc function that betweens a value from
+ * A to B over viewport-width A to viewport-width B.
+ * Requires a media query to cap the value at B.
+ */
+
+ html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+h2 {
+    font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+    font: 1.5em/1.5 "DM Sans", sans-serif;
+    text-align: center;
+}
+
+#wrapper {
+    width: 70%;     /* specify a width! */
+    margin: 0 auto; /* center */
+}
+
+i {
+    font-style: oblique;
+  }
+
+[class*=loader] {
+  position: relative;
+  top: 40%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  cursor: wait;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.loader-radar {
+    width: 4em;
+    height: 4em;
+    top: 33%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #0e5f76;
+    z-index: 1;
+    background-color: rgba(8, 61, 86, 0.2);
+    background-image: repeating-radial-gradient(transparent 0, transparent 0.39em, rgba(8, 61, 86, 0.5) 0.45em, rgba(8, 61, 86, 0.5) 0.5em);
+  }
+  #toggle:checked ~ #sect .loader-radar {
+    background-image: repeating-radial-gradient(transparent 0, transparent 0.39em, rgba(8, 61, 86, 0.5) 0.45em, rgba(8, 61, 86, 0.5) 0.5em), repeating-radial-gradient(transparent 0, transparent 0.39em, rgba(0, 0, 0, 0.25) 0.45em, rgba(0, 0, 0, 0.25) 0.5em);
+    background-position: 0px 0px, 1px 1px;
+    box-shadow: 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25), inset 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.25);
+  }
+  .loader-radar:before, .loader-radar:after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
+  .loader-radar:before {
+    z-index: 0;
+    width: 2.5em;
+    height: 2em;
+    top: 50%;
+    left: 50%;
+    transform-origin: left top;
+    border-left: 0.1em solid #19a6cf;
+    background-image: linear-gradient(to right, rgba(8, 61, 86, 0.75) 0%, transparent 85%);
+    -webkit-animation: radar 2s infinite linear;
+            animation: radar 2s infinite linear;
+  }
+  .loader-radar:after {
+    left: 62%;
+    top: 34%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: currentColor;
+    -webkit-animation: radarDotGlow 2s infinite linear, radarDotMove 15s infinite cubic-bezier(0.5, -0.35, 0.5, 1.35);
+            animation: radarDotGlow 2s infinite linear, radarDotMove 15s infinite cubic-bezier(0.5, -0.35, 0.5, 1.35);
+  }
+  
+  @-webkit-keyframes radar {
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  
+  @keyframes radar {
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  @-webkit-keyframes radarDotGlow {
+    0%, 59.9%, 87%, 100% {
+      color: rgba(25, 166, 207, 0.33);
+      box-shadow: 0 0 0.1em 0.05em currentColor;
+    }
+    62% {
+      color: #19a6cf;
+      box-shadow: 0 0 0.1em 0.1em currentColor;
+    }
+  }
+  @keyframes radarDotGlow {
+    0%, 59.9%, 87%, 100% {
+      color: rgba(25, 166, 207, 0.33);
+      box-shadow: 0 0 0.1em 0.05em currentColor;
+    }
+    62% {
+      color: #19a6cf;
+      box-shadow: 0 0 0.1em 0.1em currentColor;
+    }
+  }
+  @-webkit-keyframes radarDotMove {
+    0% {
+      top: 0%;
+      left: 85%;
+    }
+    40% {
+      top: 30%;
+      left: 70%;
+    }
+    100% {
+      top: 50%;
+      left: 50%;
+    }
+  }
+  @keyframes radarDotMove {
+    0% {
+      top: 0%;
+      left: 85%;
+    }
+    40% {
+      top: 30%;
+      left: 70%;
+    }
+    100% {
+      top: 50%;
+      left: 50%;
+    }
+  }

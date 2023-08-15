@@ -1,0 +1,57 @@
+  <!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoutePlanner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>RoutePlanner</header>
+    <div class="inputField">
+      <input type="text" placeholder="Add a new destination">
+      <button class="active"><i class="fas fa-plus"></i></button>
+    </div>
+    <div class="oneRow">
+      <form action="/" method="POST">
+        <h4>Optimize for:</h4>
+        <label>
+          <input type="radio" name="opt" value="0" checked>
+          Time
+        </label>
+        <label>
+          <input type="radio" name="opt" value="1">
+          Distance
+        </label>
+      </form>
+    </div>
+    <div class="oneRow">
+      <form action="/" method="POST">
+        <h4>Algorithm to use:</h4>
+        <label>
+          <input type="radio" name="algo" value="0" checked>
+          ACO
+        </label>
+        <label>
+          <input type="radio" name="algo" value="1">
+          PSO
+        </label>
+      </form>
+    </div>
+    <ul class="todoList">
+      <!-- data are comes from local storage -->
+    </ul>
+    <div class="footer">
+      <span>You have <span class="pendingTasks"></span> destinations</span>
+      <a href=loading ><button id="submitBtn" type="submit">Submit</button></a>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='script.js')}}"></script>
+</body>
+</html>
